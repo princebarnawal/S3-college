@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f2e7;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: #f8ddaf;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.1);
+    width: 250px;
+    margin: 70px;
+    margin-left: 40%;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #444;
+}
+
+p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+/* Media query for screens smaller than 600px (mobile devices) */
+@media (max-width: 600px) {
+    .login-container {
+        width: 90%;        /* Take almost full width */
+        margin-left: 1%;   /* Center horizontally */
+        padding: 30px 20px; /* Reduce padding */
+        margin-top: 50px;   /* Adjust top margin */
+    }
+
+    body {
+        height: auto;      /* Allow body height to adjust */
+        padding: 20px;     /* Optional padding for mobile */
+    }
+
+    h1 {
+        font-size: 24px;   /* Adjust heading size for smaller screens */
+    }
+
+    input, button {
+        padding: 10px;     /* Slightly smaller inputs/buttons */
+        font-size: 14px;   /* Adjust font size */
+    }
+}

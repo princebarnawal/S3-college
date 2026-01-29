@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Courses</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+
+        .courses {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 30%;
+        }
+
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        /* Popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .popup-content {
+            background: #fff;
+            width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #semesterList button {
+            display: block;
+            width: 100%;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>OUR COURSES</h1>
+
+    <div class="courses">
+
+        <div class="card">
+            <h2>BBA</h2>
+            <p>Bachelor of Business Administration</p>
+            <button onclick="openPopup('BBA')">View Syllabus</button>
+        </div>
+
+        <div class="card">
+            <h2>BIM</h2>
+            <p>Bachelor of Information Management</p>
+            <button onclick="openPopup('BIM')">View Syllabus</button>
+        </div>
+
+        <div class="card">
+            <h2>BCA</h2>
+            <p>Bachelor of Computer Applications</p>
+            <button onclick="openPopup('BCA')">View Syllabus</button>
+        </div>
+
+    </div>
+</div>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup()">X</span>
+
+        <h2 id="popupTitle"></h2>
+
+        <div id="semesterList"></div>
+
+        <div id="syllabusContent" style="display:none;"></div>
+    </div>
+</div>
+
+<script>
+
+    let selectedCourse = "";
+
+    // SYLLABUS DATA
+    const syllabusData = {
+        BBA: {
+            1: ["Business English", "Principles of Management", "Micro Economics"],
+            2: ["Business Mathematics", "Financial Accounting", "Macro Economics"],
+            3: ["Marketing Management", "Business Law", "Human Resource Management"],
+            4: ["Operations Management", "Financial Management", "Business Research"],
+            5: ["Entrepreneurship", "Organizational Behavior"],
+            6: ["Strategic Management", "Business Ethics"],
+            7: ["Internship"],
+            8: ["Project Work"]
+        },
+
+        BIM: {
+            1: ["Basic Mathematics", "English-I", "Foundation of Information Technology", "Foundation of Business Management", "C Programming"],
+            2: ["Business Communication", "Digital Logic", "Object Oriented Programming with Java", "Discrete Structure", "Orgainzation Behavior & Human Resource Management"],
+            3: ["Web Technologies-I", "Data Structures","Microprocessor","BUsiness Statistic","Financial Accounting"],
+            4: ["Database Management System","Economics","Web Technologies-II", "Operating System","Cost Accounting","Business Communication & Networking",],
+            5: ["Software", "Python","Information Security"," Foundation of Marketing","",],
+            6: ["Networking", "Information Security"],
+            7: ["Internship"],
+            8: ["Final Project"]
+        },
+
+        BCA: {
+            1: ["Computer Fundamentals", "C Programming", "Mathematics"],
+            2: ["OOP in C++", "Discrete Mathematics"],
+            3: ["Java Programming", "Data Structures"],
+            4: ["Operating System", "Database System"],
+            5: ["Web Development", "Software Engineering"],
+            6: ["Python Programming", "Computer Networks"],
+            7: ["Internship"],
+            8: ["Major Project"]
+        }
+    };
+
+    function openPopup(course) {
+        selectedCourse = course;
+
+        document.getElementById("popup").style.display = "block";
+        document.getElementById("popupTitle").innerText =
+            course + " - Select Semester";
+
+        let buttons = "";
+        for (let i = 1; i <= 8; i++) {
+            buttons += `<button onclick="showSyllabus(${i})">
+                            Semester ${i}
+                        </button>`;
+        }
+
+        document.getElementById("semesterList").innerHTML = buttons;
+        document.getElementById("semesterList").style.display = "block";
+        document.getElementById("syllabusContent").style.display = "none";
+    }
+
+    function showSyllabus(semester) {
+        const subjects = syllabusData[selectedCourse][semester];
+
+        document.getElementById("semesterList").style.display = "none";
+        document.getElementById("syllabusContent").style.display = "block";
+
+        document.getElementById("popupTitle").innerText =
+            `${selectedCourse} - Semester ${semester} Syllabus`;
+
+        let html = "<ul>";
+        subjects.forEach(subject => {
+            html += `<li>${subject}</li>`;
+        });
+        html += "</ul>";
+
+        document.getElementById("syllabusContent").innerHTML = html;
+    }
+
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+</script>
+
+
+
+</body>
+</html>
