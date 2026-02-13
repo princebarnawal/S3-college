@@ -1,47 +1,47 @@
 const studentResults = {
     "S15811": "AASHIK BISHWAMITRA: 85% (Passed)",
     "S15812": "AJITA JYOTI: 90% (Passed)",
-    "S15813": "AKHILESH BHATT: 78% (Passed)",
-    "S15814": "Basanta sapkota: 85% (Passed)",
-    "s15815": "BISHESH SHAHI: % (Passed)",
-    "s15816": "BISHNU POUDEL: % (Passed)",
-    "s15817": "CHIRANJEEBI PANT: % (Passed)",
-    "s15818": "DHARMA RAJ BOHARA: % (Passed)",
-    "s15819": "DIKSHYA ADHIKARI: % (Passed)",
-    "s15820": "DIPESH PANTA: % (Passed)",
-    "s15821": "JIBESH SHRESTHA ANAMANI: % (Passed)",
-    "s15822": "KHAGENDRA CHAND: % (Passed)",
-    "s15823": "LIZA DWARE: % (Passed)",
-    "s15824": "NIKITA NIROULA: % (Passed)",
-    "s15825": "NISCHAL PANDEY: % (Passed)",
-    "s15826": "NISHAL MANANDHAR: % (Passed)",
-    "s15827": "PRAKRITI KHANAL: % (Passed)",
-    "s15828": "PRASHANT WAGLE: % (Passed)",
-    "s15829": "PRINS KUMAR BARNAWAL: % (Passed)",
-    "s15830": "PRITIKA KARKI: % (Passed)",
-    "s15831": "PUNAM CHAUDHARY: % (Passed)",
-    "s15832": "RAHUL KUMAR GUPTA: % (Passed)",
-    "s15833": "RISAV SHRESTHA: % (Passed)",
-    "s15834": "RISHAB KARKI: % (Passed)",
-    "s15835": "RISTA ACHARYA: % (Passed)",
-    "s15839": "SHWAYATA CHAUDHARY: % (Passed)",
-    "s15840": "SNEHA ADHIKARI: % (Passed)",
-    "s15841": "SONUP KHADGI: % (Passed)",
-    "s15842": "SURAJ SAH: % (Passed)",
-    "s15843": "SURENDRA MAHATO: % (Passed)",
-    "s15844": "SUSHANT BHANDARI: % (Passed)",
-    "s15845": "SUSHMITA MAINALI: % (Passed)",
-    "s15848": "YOGESH BHATTARAI: % (Passed)"
-    
+    "S15813": "AKHILESH BHATT: 85% (Passed)",
+    "S15814": "BASANTA SAPKOTA: 85% (Passed)",
+    "S15815": "BISHESH SHAHI: 84% (Passed)",
+    "S15816": "BISHNU POUDEL: 84% (Passed)",
+    "S15817": "CHIRANJEEBI PANT: 78% (Passed)",
+    "S15818": "DHARMA RAJ BOHARA: 66% (Passed)",
+    "S15819": "DIKSHYA ADHIKARI: 75% (Passed)",
+    "S15820": "DIPESH PANTA: 97% (Passed)",
+    "S15821": "JIBESH SHRESTHA ANAMANI: 88% (Passed)",
+    "S15822": "KHAGENDRA CHAND: 78% (Passed)",
+    "S15823": "LIZA DWARE: 80% (Passed)",
+    "S15824": "NIKITA NIROULA: 78% (Passed)",
+    "S15825": "NISCHAL PANDEY: 82% (Passed)",
+    "S15826": "NISHAL MANANDHAR: 81% (Passed)",
+    "S15827": "PRAKRITI KHANAL: 79% (Passed)",
+    "S15828": "PRASHANT WAGLE: 83% (Passed)",
+    "S15829": "PRINS KUMAR BARNAWAL: 87% (Passed)",
+    "S15830": "PRITIKA KARKI: 88% (Passed)",
+    "S15831": "PUNAM CHAUDHARY: 79% (Passed)",
+    "S15832": "RAHUL KUMAR GUPTA: 83% (Passed)",
+    "S15833": "RISAV SHRESTHA: 78% (Passed)",
+    "S15835": "RISTA ACHARYA: 79% (Passed)",
+    "S15839": "SHWAYATA CHAUDHARY: 79% (Passed)",
+    "S15840": "SNEHA ADHIKARI: 79% (Passed)",
+    "S15841": "SONUP KHADGI: 81% (Passed)",
+    "S15842": "SURAJ SAH: 82% (Passed)",
+    "S15843": "SURENDRA MAHATO: 80% (Passed)",
+    "S15844": "SUSHANT BHANDARI: 80% (Passed)",
+    "S15845": "SUSHMITA MAINALI: 78% (Passed)",
+    "S15848": "YOGESH BHATTARAI: 78% (Passed)"
 };
 
 function checkResult() {
-    const symbol = document.getElementById("symbolNumber").value.toUpperCase();
+    const symbol = document.getElementById("symbolNumber").value.trim().toUpperCase();
     const resultDiv = document.getElementById("result");
 
-    if(symbol in studentResults){
+    if (studentResults.hasOwnProperty(symbol)) {
         resultDiv.textContent = "Result: " + studentResults[symbol];
+        resultDiv.style.color = "green";
     } else {
         resultDiv.textContent = "Result not found. Please check your symbol number.";
+        resultDiv.style.color = "red";
     }
 }
