@@ -1,84 +1,131 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Our Courses - S3 College</title>
-<link rel="stylesheet"  type="text/css" href="../Assets/CSS/style.css">
-<link rel="stylesheet" type="text/css" href="../Assets/CSS/course.css">
+  <title>Our Courses - S3 College</title>
+  <link rel="stylesheet" type="text/css" href="../Assets/CSS/style.css">
+  <link rel="stylesheet" type="text/css" href="../Assets/CSS/course.css">
   <link rel="stylesheet" type="text/css" href="../Assets/css/course_popup.css">
 </head>
+
 <body>
-    <div class="apple">
+  <div class="apple">
 
-  <div class="navbar">
-    <div class="navrab">
-      <img src="../Assets/Image/logo.png" alt="logo" id="ima" />
-    </div>
+    <div class="navbar">
+      <div class="navrab">
+        <img src="../Assets/Image/logo.png" alt="logo" id="ima" />
+      </div>
 
-    <div class="nav">
-      <a id="name" style="color: black;">
-        <u> S3 College </u>
-      </a>
-    </div>
+      <div class="nav">
+        <a id="name" style="color: black;">
+          <u> S3 College </u>
+        </a>
+      </div>
 
-    <div class="anchar">
-      <a href="home.html" id="ar">Home</a>
-      <a id="ar" style="color: red;">Course</a>
-      <a href="about-us.html" id="ar">About-Us</a>
-      <a href="notice.html" id="ar">Notice</a>
-      <a href="Contact.html" id="ar">Contact </a>
-    </div>
+      <div class="anchar">
+        <a href="home.html" id="ar">Home</a>
+        <a id="ar" style="color: red;">Course</a>
+        <a href="about-us.html" id="ar">About-Us</a>
+        <a href="notice.html" id="ar">Notice</a>
+        <a href="Contact.html" id="ar">Contact </a>
+      </div>
     </div>
     <a href="sign-in.html" class="login-btw">Login / Sign-In</a>
   </div>
 
 
-<div class="container">
+  <div class="container">
     <h1>OUR COURSES</h1>
 
     <div class="courses">
-        <div class="card">
-            <h2>BBA</h2>
-            <p><b>Bachelor of Business Administration</b></p>
-              <p> A program that focuses on developing leadership, management, and essential business skills.
-                It provides a strong foundation in areas such as finance, marketing, human resources,
-                and operations, while enhancing analytical thinking and decision-making abilities.
-                The program also helps students improve communication teamwork, and problem-solving skills..</p>
-            <button  onclick="openPopup()">View Syllabus</button>
-        </div>
-        
-        <script src="../Assets/js/BBA_popup.js"></script>
+      <div class="card">
+        <h2>BBA</h2>
+        <p><b>Bachelor of Business Administration</b></p>
+        <p> A program that focuses on developing leadership, management, and essential business skills.
+          It provides a strong foundation in areas such as finance, marketing, human resources,
+          and operations, while enhancing analytical thinking and decision-making abilities.
+          The program also helps students improve communication teamwork, and problem-solving skills..</p>
+        <button onclick="openPopup('bbaPopup')">View Syllabus</button>
+      </div>
 
-        <div class="card">
-            <h2>BIM</h2>
-            <p><b>Bachelor of Information Management</b></p>
-            <p> It is a combines information technology knowledge with modern management practices.
-                It equips students with skills in IT systems, data management, and business processes while
-                developing leadership, analytical, and decision-making abilities. The program prepares graduates
-                to effectively manage information resources and adapt to the technological needs of organizations..</p>
-            <button>View Syllabus</button>
-        </div>
+      <script src="../Assets/js/BBA_popup.js"></script>
 
-        <div class="card">
-            <h2>BCA</h2>
-            <p><b>Bachelor of Computer Applications</b></p>
-            <p>It is a program that focuses on programming and software development. It provides students with a strong foundation
-                in computer science, coding, and application development while enhancing problem-solving and analytical skills. 
-                The program prepares graduates for careers in software development, data analysis, managing database, IT services, and the technology industry..</p>
-            <button>View Syllabus</button>
-        </div>
+      <div class="card">
+        <h2>BIM</h2>
+        <p><b>Bachelor of Information Management</b></p>
+        <p> It is a combines information technology knowledge with modern management practices.
+          It equips students with skills in IT systems, data management, and business processes while
+          developing leadership, analytical, and decision-making abilities. The program prepares graduates
+          to effectively manage information resources and adapt to the technological needs of organizations..</p>
+        <button onclick="openPopup('bimPopup')">View Syllabus</button>
+      </div>
+
+      <div class="card">
+        <h2>BCA</h2>
+        <p><b>Bachelor of Computer Applications</b></p>
+        <p>It is a program that focuses on programming and software development. It provides students with a strong
+          foundation
+          in computer science, coding, and application development while enhancing problem-solving and analytical
+          skills.
+          The program prepares graduates for careers in software development, data analysis, managing database, IT
+          services, and the technology industry..</p>
+        <button onclick="openPopup('bcaPopup')">View Syllabus</button>
+      </div>
     </div>
-</div>
+  </div>
 
-      <div id="popup" class="popup">
-        <div class="popup-content">
-            <span class="close" onclick="closePopup()">X</span>
-            <h2>Popup Title</h2>
-            <p>qwertyuiopasdfghjklzxcvbnm</p>
-        </div>
+
+
+  <!-- BBA Popup -->
+  <div id="bbaPopup" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('bbaPopup')">X</span>
+      <h2>Choose Semester</h2>
+      <a href="https://www.fomecd.edu.np/syllabuses/BBA%201st%20Semester%20Syllabus.pdf">1st sem </a><br>
+      <a href="https://www.fomecd.edu.np/syllabuses/BBA%202nd%20Semester%20Syllabus%202022.pdf">2nd sem </a><br>
+      <a href="https://www.fomecd.edu.np/syllabuses/BBA%203rd%20Semester%20Syllabus%202023.pdf">3rd sem </a><br>
+      <a href="https://www.fomecd.edu.np/syllabuses/BBA%20Revised%20Structure%20with%204th%20Semester%20Syllabus%202023.pdf">4th sem </a><br>
+      <a href="https://www.fomecd.edu.np/syllabuses/BBA_5th_2024.pdf">5th sem </a><br>
+      <a href="https://www.fomecd.edu.np/syllabuses/BBA%205th%20Semester%20Syllabus%202024.pdf">6th sem </a><br>
+      <a href="https://www.fomecd.edu.np/syllabuses/BBA%207th%20Semester%20Syllabus%202025.pdf">7th sem </a><br>
+      <a href="https://www.fomecd.edu.np/syllabuses/BBA%208th%20Semester%20Syllabus%202025.pdf">8th sem </a>
     </div>
+  </div>
 
-    <br><br><br><br><br><br><br><br><br><br>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- BIM Popup -->
+  <div id="bimPopup" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('bimPopup')">X</span>
+      <h2>Choose Semester</h2>
+      <a href="https://www.fomecd.edu.np/syllabuses/BIM%201st%20Semester%20Syllabus.pdf">1st sem </a><br>
+      <a href="https://www.fomecd.edu.np/syllabuses/BIM%202nd%20Semester%20Syllabus%202022.pdf">2nd sem </a><br>
+      <a href="https://www.fomecd.edu.np/syllabuses/BIM%203rd%20Semester%20Syllabus%202023.pdf">3rd sem </a><br>
+      <a href="https://www.fomecd.edu.np/syllabuses/BIM%20Revised%20Structure%20with%204th%20Semester%20Syllabus%202023.pdf">4th sem </a><br>
+      <a href="https://www.fomecd.edu.np/syllabuses/BIM%205th%20Semester%20Syllabus%202024-2.pdf">5th sem </a><br>
+      <a href="https://www.fomecd.edu.np/syllabuses/BIM%206th%20Sem%20project%20guidelines%202025.pdf">6th sem </a><br>
+      <a href="https://www.fomecd.edu.np/syllabuses/BIM%207th%20Semester%20Syllabus%202025.pdf">7th sem </a><br>
+      <a href="https://www.fomecd.edu.np/syllabuses/BIM%208th%20Semester%20Syllabus%202025.pdf">8th sem </a>
+    </div>
+  </div>
+
+  <!-- BCA Popup -->
+  <div id="bcaPopup" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('bcaPopup')">X</span>
+      <h2>Choose Semester</h2>
+      <a href="https://www.shravan.com.np/2021/07/bca-tu-syllabus-pdf.html" target="_blank">1st sem </a><br>
+      <a href="https://www.shravan.com.np/2021/07/bca-tu-syllabus-pdf.html" target="_blank">3rd sem </a><br>
+      <a href="https://www.shravan.com.np/2021/07/bca-tu-syllabus-pdf.html" target="_blank">2nd sem </a><br>
+      <a href="https://bcapoint.com/bca-fifth-semester-syllabus/" target="_blank">5th sem </a><br>
+      <a href="https://www.shravan.com.np/2021/07/bca-tu-syllabus-pdf.html" target="_blank">4th sem </a><br>
+      <a href="https://www.shravan.com.np/2021/07/bca-tu-syllabus-pdf.html" target="_blank">7th sem </a><br>
+      <a href="https://www.shravan.com.np/2021/07/bca-tu-syllabus-pdf.html" target="_blank">6th sem </a><br>
+      <a href="https://www.shravan.com.np/2021/07/bca-tu-syllabus-pdf.html" target="_blank">8th sem </a>
+    </div>
+  </div>
+
+  <br><br><br><br><br><br><br><br><br><br>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <div class="down">
     <hr>
     <div class="social-icons">
@@ -87,10 +134,11 @@
       <a href="https://wa.me/your_number" target="_blank"><i class="fab fa-whatsapp"></i></a>
       <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
     </div>
-  
+
     <p> &copy; 2026 Website. All rights reserved.&nbsp;&nbsp;|&nbsp;&nbsp;Privacy Policy</p>
     <hr />
   </div>
-  
+
 </body>
+
 </html>

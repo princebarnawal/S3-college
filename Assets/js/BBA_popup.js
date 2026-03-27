@@ -1,7 +1,7 @@
-        function openPopup() {
-            document.getElementById("popup").style.display = "block";
-        }
+        function openPopup(id) {
+    document.getElementById(id).style.display = "block";
+}
 
-        function closePopup() {
-            document.getElementById("popup").style.display = "none";
-        }
+function closePopup(id) {
+    document.getElementById(id).style.display = "none";
+}

@@ -34,15 +34,32 @@
 <div class="container">
     <h1>NOTICES & RESULTS</h1>
 
-    <div class="notices">
-        <h2>Latest Notices</h2>
-        <ul>
-            <li>Admission open for 2026–27 session</li>
-            <li>Annual Sports Meet on 20th January 2026</li>
-            <li>Seminar on Digital Technology on 25th January 2026</li>
-            <li>Fee submission deadline: 15th February 2026</li>
-        </ul>
-    </div>
+   <div class="notices">
+    <h2>Latest Notices</h2>
+    <ul>
+        <?php
+        $con = mysqli_connect('localhost', 'root', '', 'S3_College');
+        if (!$con) {
+            die("Database connection failed: " . mysqli_connect_error());
+        }
+
+        $query = "SELECT title, description, created_at FROM teacher_notices ORDER BY created_at DESC";
+        $result = mysqli_query($con, $query);
+
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<li><strong>" . htmlspecialchars($row['title']) . "</strong>: " 
+                    . htmlspecialchars($row['description']) 
+                    . " <em>(" . $row['created_at'] . ")</em></li>";
+            }
+        } else {
+            echo "<li>No notices available at the moment.</li>";
+        }
+
+        mysqli_close($con);
+        ?>
+    </ul>
+</div>
 
     <div class="search-section">
         <h2>Check Your Result</h2>
@@ -54,7 +71,6 @@
     </div>
 </div>
 
-<script src="../Assets/js/result.js"> </script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <div class="down">
