@@ -22,21 +22,26 @@ if (isset($_POST['submit'])) {
     // image upload
     if (isset($_FILES['teacher_image']) && $_FILES['teacher_image']['error'] === 0)
     {
-        $image_name = $_FILES['teacher_image']['name'];
-        $image_tmp = $_FILES['teacher_image']['tmp_name'];
+  $folder = "uploads/";
+$image_name = $_FILES['teacher_image']['name'];
+$image_tmp = $_FILES['teacher_image']['tmp_name'];
 
-        if (move_uploaded_file($image_tmp, $image_name)) {
+$image_path = $folder . basename($image_name);
 
-            $insert ="INSERT INTO teacher_details ( teacher_name, subject_name,) VALUES ('$teacher_name','$subject_name')";
+if (move_uploaded_file($image_tmp, $image_path)) {
 
-            if (mysqli_query($con,$insert)) {
-                echo "Teacher added successfully!";
-            } else {
-                echo "Database insert failed: " . mysqli_error($con);
-            }
-        } else {
-            echo "Failed to upload image.";
-        }
+    $insert = "INSERT INTO teacher_details (teacher_name, subject_name, image_path) 
+               VALUES ('$teacher_name', '$subject_name', '$image_path')";
+
+    if (mysqli_query($con, $insert)) {
+        echo "Teacher added successfully!";
+    } else {
+        echo "Database insert failed: " . mysqli_error($con);
+    }
+
+} else {
+    echo "Failed to upload image.";
+}
     } else {
         echo "No image uploaded or upload error.";
     }

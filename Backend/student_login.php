@@ -10,7 +10,7 @@ session_start();
 		$result = mysqli_query($con,$select) or die("Retrieval Error");
 		
 		if(mysqli_num_rows($result) == 0){
-			echo "email does not match";
+			echo "Student Id does not match";
 		} else {
 			$row = mysqli_fetch_assoc($result);
 			$pass = $row['password'];
@@ -23,7 +23,7 @@ session_start();
 				echo 'Login Successful. ';
 
 		}else{
-			echo "Password does not match";
+			echo "Student_id or Password does not match";
 		}
 			}
 		}
