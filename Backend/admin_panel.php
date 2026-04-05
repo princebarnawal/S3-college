@@ -28,7 +28,10 @@ if (!isset($_SESSION['admin'])) {
     <a href="#notice">Add Notice</a>
     <a href="#result">Add Result</a>
     <a href="#student">Add Student</a>
-    <a href="#teacher">Add Teacher</a>
+    <a href="#teacher">Add Teacher</a>  <br><br><br><br>
+    <a href="Delete/delete_notices.php">Delete Notices</a>
+    <a href="Delete/delete_result.php">Delete Result</a>
+    <a href="Delete/delete_teacher.php">Delete Teacher Detail</a>
   </div>
 
   <div class="main">
@@ -36,7 +39,7 @@ if (!isset($_SESSION['admin'])) {
     <!-- NOTICE -->
     <div class="card" id="notice">
       <h3>Publish Notice</h3>
-      <form action="add_notice.php" method="POST">
+      <form action="Add/add_notice.php" method="POST">
         <label for="title">Title:</label>
             <input type="text" id="title" name="title" placeholder="Enter Title" required maxlength="100">
         <label for="description">Description:</label>
@@ -51,7 +54,7 @@ if (!isset($_SESSION['admin'])) {
     <!-- RESULT  -->
     <div class="card" id="result">
       <h3>Publish Result</h3>
-      <form action="add_result.php" method="POST">
+      <form action="Add/add_result.php" method="POST">
         <label for="std_symboll">Symbol No:</label>
             <input type="number" id="std_symboll" name="std_symboll" placeholder="Enter symbol no" required min="1">
         <label for="std_name">Student Name:</label>
@@ -68,7 +71,7 @@ if (!isset($_SESSION['admin'])) {
     <!-- STUDENT -->
     <div class="card" id="student">
       <h3>Add Student</h3>
-      <form action="add_student.php" method="POST">
+      <form action="Add/add_student.php" method="POST">
         <label for="student_id">Student ID:</label>
             <input type="text" id="student_id" name="student_id" placeholder="Enter Student ID" required maxlength="20">
         <label for="name">Student Name:</label>
@@ -83,7 +86,7 @@ if (!isset($_SESSION['admin'])) {
 
 
     <div class="card" id="teacher">
-      <form action="add_teacher-detail.php" method="POST" enctype="multipart/form-data">
+      <form action="Add/add_teacher-detail.php" method="POST" enctype="multipart/form-data">
         <label for="teacher_name">Teacher Name:</label>
             <input type="text" id="teacher_name" name="teacher_name" placeholder="Enter Teacher Name" required><br>
         <label for="subject_name">Subject Name:</label>
@@ -95,6 +98,8 @@ if (!isset($_SESSION['admin'])) {
     </div>
 
   </div>
+
+  
 
 </body>
 
