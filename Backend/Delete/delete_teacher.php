@@ -131,23 +131,35 @@ $result = mysqli_query($con, "SELECT * FROM teacher_details");
 <?php } ?>
 
 <div class="container">
-
 <?php while ($row = mysqli_fetch_assoc($result)) { ?>
 
-    <div class="card">
-        <img src="<?php echo $row['image_path']; ?>" alt="Teacher Image">
+<?php
+$image = "../Add/" . $row['image_path'];
 
-        <h3><?php echo $row['teacher_name']; ?></h3>
-        <p><?php echo $row['subject_name']; ?></p>
+if (!file_exists($image)) {
+    $image = "../uploads/" . basename($row['image_path']);
+}
+?>
 
-        <form method="POST">
-            <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
-            <button class="delete-btn"
+<div class="card">
+
+    <img src="<?php echo $image; ?>" alt="Teacher Image">
+
+    <h3><?php echo htmlspecialchars($row['teacher_name']); ?></h3>
+
+    <p><?php echo htmlspecialchars($row['subject_name']); ?></p>
+
+    <form method="POST">
+        <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
+
+        <button type="submit"
+                class="delete-btn"
                 onclick="return confirm('Are you sure you want to delete this teacher?');">
-                Delete
-            </button>
-        </form>
-    </div>
+            Delete
+        </button>
+    </form>
+
+</div>
 
 <?php } ?>
 
