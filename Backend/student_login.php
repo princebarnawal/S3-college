@@ -20,7 +20,7 @@ session_start();
 				setcookie('name',$name,time()+180);
 				setcookie('pwd',$pwd,time()+180);
 				
-				echo 'Login Successful. ';
+				echo 'Login Successful.';
 
 		}else{
 			echo "Student_id or Password does not match";
