@@ -95,7 +95,7 @@ $result = mysqli_query($con, "SELECT * FROM teacher_notices ORDER BY created_at 
 
 <div class="notice-container">
 
-<?php if(mysqli_num_rows($result) > 0) { 
+<?php if(mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) { ?>
     
     <div class="notice-card">
