@@ -1,3 +1,11 @@
+/* ================= RESET ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
 /* ================= HOME ================= */
 
 .home{
@@ -6,6 +14,7 @@
     align-items:center;
     padding:80px 8%;
     min-height:70vh;
+    gap:40px;
 }
 
 .home-left{
@@ -43,7 +52,6 @@
 }
 
 /* Button */
-
 .read{
     display:inline-block;
     padding:14px 28px;
@@ -61,7 +69,7 @@
 }
 
 /* ================= GALLERY ================= */
-
+/* OUTER BOX */
 #gall{
     width:90%;
     margin:60px auto;
@@ -69,73 +77,61 @@
     border-radius:20px;
     padding:40px;
     box-shadow:0 5px 15px rgba(0,0,0,.15);
+    overflow:hidden; /* ⭐ IMPORTANT FIX */
 }
 
+/* INNER WRAPPER */
 .gallery{
-    display:flex;
-    justify-content:center;
+    width:100%;
+    overflow:hidden; /* ⭐ IMPORTANT FIX */
 }
 
+/* GRID FIX */
 .slider-track{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:25px;
+    grid-template-columns:repeat(4, 1fr);
+    gap:20px;
+    width:100%; /* ⭐ IMPORTANT FIX */
 }
 
+/* IMAGE BOX */
 .slide{
-    overflow:hidden;
     border-radius:15px;
+    overflow:hidden;
 }
 
+/* IMAGE FIX */
 .slide img{
     width:100%;
-    height:250px;
+    height:220px;
     object-fit:cover;
-    transition:.4s;
+    display:block;
 }
 
+/* HOVER EFFECT */
 .slide img:hover{
-    transform:scale(1.08);
+    transform:scale(1.05);
+    transition:0.4s;
 }
 
-/* ================= MOBILE ================= */
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1024px){
+    .slider-track{
+        grid-template-columns:repeat(2, 1fr);
+    }
+}
 
 @media(max-width:768px){
+    .slider-track{
+        grid-template-columns:1fr;
+    }
 
-.home{
-    flex-direction:column;
-    text-align:center;
-    padding:50px 25px;
-}
+    #gall{
+        padding:20px;
+    }
 
-.home-left h1{
-    font-size:40px;
-}
-
-.tagline{
-    font-size:18px;
-}
-
-.home-right{
-    max-width:100%;
-    margin-top:30px;
-}
-
-.read{
-    width:100%;
-}
-
-#gall{
-    width:95%;
-    padding:20px;
-}
-
-.slider-track{
-    grid-template-columns:1fr;
-}
-
-.slide img{
-    height:220px;
-}
-
+    .slide img{
+        height:200px;
+    }
 }

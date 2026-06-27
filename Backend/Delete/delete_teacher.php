@@ -137,7 +137,7 @@ $result = mysqli_query($con, "SELECT * FROM teacher_details");
 $image = "../Add/" . $row['image_path'];
 
 if (!file_exists($image)) {
-    $image = "../uploads/" . basename($row['image_path']);
+    $image = "../../uploads/" . basename($row['image_path']);
 }
 ?>
 
