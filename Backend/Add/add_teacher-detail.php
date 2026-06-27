@@ -20,31 +20,38 @@ if (isset($_POST['submit'])) {
     $subject_name = $_POST['subject_name'];
 
     // image upload
-    if (isset($_FILES['teacher_image']) && $_FILES['teacher_image']['error'] === 0)
-    {
-  $folder = "uploads/";
-$image_name = $_FILES['teacher_image']['name'];
-$image_tmp = $_FILES['teacher_image']['tmp_name'];
+ if (isset($_FILES['teacher_image']) && $_FILES['teacher_image']['error'] === 0) {
 
-$image_path = $folder . basename($image_name);
+    $upload_folder = __DIR__ . "/../../uploads/";
 
-if (move_uploaded_file($image_tmp, $image_path)) {
+    if (!is_dir($upload_folder)) {
+        mkdir($upload_folder, 0777, true);
+    }
 
-    $insert = "INSERT INTO teacher_details (teacher_name, subject_name, image_path) 
-               VALUES ('$teacher_name', '$subject_name', '$image_path')";
+    $image_name = time() . "_" . basename($_FILES['teacher_image']['name']);
+    $image_tmp = $_FILES['teacher_image']['tmp_name'];
 
-    if (mysqli_query($con, $insert)) {
+    $target_path = $upload_folder . $image_name;
+
+    if (move_uploaded_file($image_tmp, $target_path)) {
+
+        $image_path = "uploads/" . $image_name;
+
+        $insert = "INSERT INTO teacher_details
+                   (teacher_name, subject_name, image_path)
+                   VALUES
+                   ('$teacher_name', '$subject_name', '$image_path')";
+
+        mysqli_query($con, $insert);
+
         echo "Teacher added successfully!";
     } else {
-        echo "Database insert failed: " . mysqli_error($con);
+        echo "Failed to upload image.";
     }
 
 } else {
-    echo "Failed to upload image.";
+    echo "No image uploaded or upload error.";
 }
-    } else {
-        echo "No image uploaded or upload error.";
-    }
 }
 ?>
 

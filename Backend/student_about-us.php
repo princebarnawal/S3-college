@@ -53,13 +53,20 @@
 
 
 
-        if (mysqli_num_rows($result) > 0) {
-        while ($row = mysqli_fetch_assoc($result)) {
+if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+
         echo "<div class='card'>";
-        echo "<img src='" . htmlspecialchars($row['image_path']) . "' alt='" . htmlspecialchars($row['teacher_name']) . "'>" ; 
-        echo "<h3>" . htmlspecialchars($row['teacher_name']) . "</h3>" ; echo "<p>" . htmlspecialchars($row['subject_name']) . "</p>" ; 
-        echo "</div>" ; } } else {
-        echo "<p>No teachers added yet.</p>" ; }
+
+        echo "<img src='../" . htmlspecialchars($row['image_path']) . "' width='200' height='180'>";
+        echo "<h3>" . htmlspecialchars($row['teacher_name']) . "</h3>";
+        echo "<p>" . htmlspecialchars($row['subject_name']) . "</p>";
+
+        echo "</div>";
+    }
+} else {
+    echo "<p>No teachers added yet.</p>";
+}
             
         ?>
 
