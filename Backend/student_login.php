@@ -20,7 +20,8 @@ session_start();
 				setcookie('name',$name,time()+180);
 				setcookie('pwd',$pwd,time()+180);
 				
-				echo 'Login Successful.';
+				 header("Location: ../Frontend/home.html"); // or home.html
+            exit();
 
 		}else{
 			echo "Student_id or Password does not match";
