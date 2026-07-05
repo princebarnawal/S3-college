@@ -28,9 +28,6 @@
     color:#222;
 }
 
-.home-left span{
-    color:#d62828;
-}
 
 .tagline{
     margin-top:20px;
@@ -73,17 +70,18 @@
 #gall{
     width:90%;
     margin:60px auto;
-    background:#f8f5ef;
+    /* background:#f8f5ef; */
+    background: #efd9b3;
     border-radius:20px;
     padding:40px;
     box-shadow:0 5px 15px rgba(0,0,0,.15);
-    overflow:hidden; /* ⭐ IMPORTANT FIX */
+    overflow:hidden; 
 }
 
 /* INNER WRAPPER */
 .gallery{
     width:100%;
-    overflow:hidden; /* ⭐ IMPORTANT FIX */
+    overflow:hidden; 
 }
 
 /* GRID FIX */
@@ -91,7 +89,7 @@
     display:grid;
     grid-template-columns:repeat(4, 1fr);
     gap:20px;
-    width:100%; /* ⭐ IMPORTANT FIX */
+    width:100%;
 }
 
 /* IMAGE BOX */

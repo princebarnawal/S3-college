@@ -30,6 +30,7 @@ if (!isset($_SESSION['admin'])) {
     <a href="#student">Add Student</a>
     <a href="#teacher">Add Teacher</a>  <br><br><br><br>
     <a href="Delete/delete_notices.php">Delete Notices</a>
+    <a href="Delete/delete_student.php">Delete Student Id</a>
     <a href="Delete/delete_result.php">Delete Result</a>
     <a href="Delete/delete_teacher.php">Delete Teacher Detail</a>
   </div>
