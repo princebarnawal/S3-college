@@ -87,6 +87,7 @@ if (!isset($_SESSION['admin'])) {
 
 
     <div class="card" id="teacher">
+      <h3>Add Teacher</h3>
       <form action="Add/add_teacher-detail.php" method="POST" enctype="multipart/form-data">
         <label for="teacher_name">Teacher Name:</label>
             <input type="text" id="teacher_name" name="teacher_name" placeholder="Enter Teacher Name" required><br>
