@@ -85,7 +85,7 @@ if (!isset($_SESSION['admin'])) {
 
 
 
-
+    <!-- Teacher -->
     <div class="card" id="teacher">
       <h3>Add Teacher</h3>
       <form action="Add/add_teacher-detail.php" method="POST" enctype="multipart/form-data">
