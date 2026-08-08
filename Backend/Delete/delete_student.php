@@ -1,4 +1,5 @@
 <?php
+
 $con = mysqli_connect("localhost", "root", "", "S3_College");
 
 if (!$con) {
@@ -8,16 +9,28 @@ if (!$con) {
 // Delete Student
 if (isset($_GET['delete'])) {
 
-    $id = intval($_GET['delete']);
+    // Get student ID
+    $student_id = $_GET['delete'];
 
-    $delete = mysqli_query($con, "DELETE FROM t_insert_student_id WHERE id = $id");
+    // Delete using student_id
+    $delete = mysqli_query(
+        $con,
+        "DELETE FROM t_insert_student_id WHERE student_id = '$student_id'"
+    );
 
     if ($delete) {
-        echo "<script>alert('Student deleted successfully!');</script>";
+        echo "<script>
+                alert('Student deleted successfully!');
+                window.location.href = 'delete_student.php';
+              </script>";
+        exit();
     } else {
-        echo "<script>alert('Failed to delete student!');</script>";
+        echo "<script>
+                alert('Failed to delete student!');
+              </script>";
     }
 }
+
 ?>
 
 <!DOCTYPE html>

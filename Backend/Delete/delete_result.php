@@ -94,7 +94,7 @@ $result = mysqli_query($con, "SELECT * FROM teacher_results ORDER BY id DESC");
 
 <table>
     <tr>
-        <th>ID</th>
+        <!-- <th>ID</th> -->
         <th>Symbol No.</th>
         <th>Student Name</th>
         <th>Percentage</th>
@@ -104,7 +104,7 @@ $result = mysqli_query($con, "SELECT * FROM teacher_results ORDER BY id DESC");
     <?php if(mysqli_num_rows($result) > 0) {
         while($row = mysqli_fetch_assoc($result)) { ?>
             <tr>
-                <td><?php echo $row['id']; ?></td>
+                
                 <td><?php echo htmlspecialchars($row['student_symboll']); ?></td>
                 <td><?php echo htmlspecialchars($row['student_name']); ?></td>
                 <td><?php echo htmlspecialchars($row['percentage']); ?>%</td>

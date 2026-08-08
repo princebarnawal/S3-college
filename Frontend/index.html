@@ -43,12 +43,13 @@
 
 <div class="login-container">
     <h1>Login</h1>
-    <form action="../Backend/student_login.php" method="POST">
-        <input type="number" id="n3" name="stu_id" placeholder="Enter your id number" required>
-        <input type="text" id="n1" name="name" placeholder="Enter your name" required>
-        <input type="password" id="n5" name="pwd" placeholder="Password" required>
-        <button type="submit" name="btw">Login</button>
-    </form>
+  <form action="../Backend/student_login.php" method="POST" id="studentLoginForm">
+    <input type="number" id="n3" name="stu_id" placeholder="Enter your id number">
+    <input type="text" id="n1" name="name" placeholder="Enter your name">
+    <input type="password" id="n5" name="pwd" placeholder="Password">
+    <button type="submit" name="btw">Login</button>
+</form>
+<script src="../Assets/js/student_login.js"></script>
 
 </div>
 
