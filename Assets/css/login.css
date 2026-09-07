@@ -66,6 +66,8 @@ a:hover {
 
 
 
+
+
 /* Media query for screens smaller than 600px (mobile devices) */
 @media (max-width: 600px) {
     .login-container {

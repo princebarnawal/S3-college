@@ -27,7 +27,7 @@
       <a href="../Frontend/Contact.html" id="ar">Contact </a>
     </div>
     </div>
-    <!-- <a href="../Frontend/index.html" class="login-btw">Login</a> -->
+    <a href="student_logout.php" class="login-btw">Log-Out </a>
   </div>
  
 
