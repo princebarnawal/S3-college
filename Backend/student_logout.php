@@ -9,7 +9,7 @@ session_destroy();
 <html>
 <head>
     <title>Logout</title>
-    <meta http-equiv="refresh" content="3;url=../Frontend/index.html">
+    <meta http-equiv="refresh" content="3;url=../Frontend/index.php">
 
     <style>
         body {
